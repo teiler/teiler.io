@@ -1,0 +1,13 @@
+sudo: false
+dist: trusty
+language: node_js
+node_js:
+  - '6'
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+install:
+- yarn install
