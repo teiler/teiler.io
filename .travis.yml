@@ -11,3 +11,15 @@ cache:
 
 install:
 - yarn install
+
+before_deploy:
+- $(yarn bin)/gulp
+- echo 'teiler.io' > dist/CNAME
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist
+  on:
+    branch: master
